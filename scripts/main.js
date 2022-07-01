@@ -43,6 +43,37 @@ const scrollSpy = (navInteraction) => {
   elementsWithId.forEach( ele => intersectionObserver.observe(ele));
 }
 
+class Comments{
+  constructor(pattern) {
+    this.target = document.querySelector(pattern);
+    this.commentUrl = this.target.dataset.jsComments;
+  }
+
+  fetch(){
+    fetch(this.commentUrl)
+    .then(response => response.json())
+    .then(data => this.render(data));
+  }
+
+  render(data) {
+    const commentList = data.map(comment => {
+      return `
+        <figure class="comment">
+          <img class="comment_avatar" src="/images/avatars/${comment.avatar}" alt="${comment.firstname} ${comment.lastname}">
+          <figcaption>
+            <h3 class="comment__name">${comment.firstname} ${comment.lastname}</h3>
+            <p class="comment__text">${comment.comment}</p>
+            <date class="comment__date">${comment.date}</date>
+          </figcaption>
+        </figure>
+      `;
+    });
+
+    this.target.innerHTML = commentList.join("");
+  }
+
+}
+
 const fetchComments = () => {
   fetch('/json/comments.json')
   .then(response => response.json())
@@ -70,11 +101,12 @@ const renderComments = (comments) => {
 ############################################################################ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // navInteraction();
   const navbar = document.querySelector('.navbar');
   const navInteraction = new NavInteraction(navbar);
   navInteraction.addInteraction();
   
   scrollSpy(navInteraction);
-  fetchComments();
+
+  const comments = new Comments('[data-js-comments]');
+  comments.fetch();
 });
