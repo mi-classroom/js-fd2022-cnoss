@@ -43,6 +43,7 @@ class Comments {
     fetch(this.commentUrl)
       .then((response) => response.json())
       .then((commentsData) => {
+        // eslint-disable-next-line no-undef
         this.target.innerHTML = Mustache.render(template, commentsData);
       });
   }
@@ -66,6 +67,37 @@ const scrollSpy = (navInteraction) => {
   elementsWithId.forEach((ele) => intersectionObserver.observe(ele));
 };
 
+const vueComments = () => {
+  // eslint-disable-next-line no-undef
+  const { createApp } = Vue;
+
+  createApp({
+    data() {
+      return {
+        jsonUrl: '/json/comments.json',
+        message: 'Hello Vue!',
+        comments: [],
+      };
+    },
+    methods: {
+      fetchData(jsonUrl) {
+        fetch(jsonUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            this.comments = data;
+          });
+      },
+      imageUrl(filename) {
+        return `/images/avatars/${filename}`;
+      },
+    },
+    mounted() {
+      this.fetchData(this.jsonUrl);
+    },
+
+  }).mount('#vue-comments');
+};
+
 /* Main
 ############################################################################ */
 
@@ -78,4 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const comments = new Comments('[data-js-comments]');
   comments.render();
+
+  vueComments();
 });
