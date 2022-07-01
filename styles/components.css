@@ -135,44 +135,44 @@
 
 /* Kommentare
 ############################################################################ */
-#kommentar-hinterlassen {
+#comments {
   padding: var(--m);
   background-color: var(--lighter);
   font-size: var(--s);
   margin-top: var(--xxxxl);
 }
 
-#kommentar-hinterlassen form label {
+#comments form label {
   display: block;
 }
 
-#kommentar-hinterlassen form input[type="radio"] + label,
-#kommentar-hinterlassen form input[type="checkbox"] + label {
+#comments form input[type="radio"] + label,
+#comments form input[type="checkbox"] + label {
   display: inline-block;
 }
 
-#kommentar-hinterlassen form input[type="text"],
-#kommentar-hinterlassen form input[type="email"],
-#kommentar-hinterlassen form textarea {
+#comments form input[type="text"],
+#comments form input[type="email"],
+#comments form textarea {
   display: block;
   width: 100%;
   padding: var(--xxs);
 }
 
-#kommentar-hinterlassen form textarea {
+#comments form textarea {
   height: var(--xxl);
 }
 
-#kommentar-hinterlassen .headline {
+#comments .headline {
   font-size: var(--m);
   padding-top: 0;
 }
 
-#kommentar-hinterlassen fieldset {
+#comments fieldset {
   margin-bottom: var(--m);
 }
 
-#kommentar-hinterlassen legend {
+#comments legend {
   color: var(--dark);
   margin-top: var(--m);
   margin-bottom: var(--m);
