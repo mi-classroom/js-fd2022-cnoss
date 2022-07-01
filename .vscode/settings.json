@@ -1,6 +1,11 @@
 {
   "liveServer.settings.port": 5501,
+  "stylelint.enable": true,
+  "stylelint.validate": [
+    "scss"
+  ],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   }
 }
