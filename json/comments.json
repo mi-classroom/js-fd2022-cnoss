@@ -1,0 +1,44 @@
+[
+  {
+    "firstname": "Arno",
+    "lastname":"Nym",
+    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "date": "10.06.2021",
+    "avatar":"avatar-1.png"
+  },
+  {
+    "firstname": "Ana",
+    "lastname":"Log",
+    "comment": "Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.",
+    "date": "13.06.2021",
+    "avatar":"avatar-4.png"
+  },
+  {
+    "firstname": "Theo",
+    "lastname":"Loge",
+    "comment": "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.",
+    "date": "10.07.2021",
+    "avatar":"avatar-2.png"
+  },
+  {
+    "firstname": "Ellen",
+    "lastname":"Bogen",
+    "comment": "Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before. Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species.",
+    "date": "13.07.2021",
+    "avatar":"avatar-5.png"
+  },
+  {
+    "firstname": "Harry",
+    "lastname":"Krischner",
+    "comment": "Busey ipsum dolor sit amet. Have you urinated? Have you drained your bladder? Are you free? Because if you haven't it will only come out later. I'm giving you some information that your bodily fluids may penetrate your clothing fibre's without warning.It's OK to get Rib-grease on your face, because you're allowing people to see that you're proud of these ribs.",
+    "date": "13.07.2021",
+    "avatar":"avatar-6.png"
+  },
+  {
+    "firstname": "Rosa",
+    "lastname":"Wolke",
+    "comment": "Skate ipsum dolor sit amet, alley oop vert mute-air Colby Carter flail 180 berm. Half-cab camel back ollie transition ledge Wes Humpston 1080. Carve casper switch kickturn late downhill. Hardware nosebone Rick McCrank bluntslide bigspin steps egg plant. Slap maxwell roll-in airwalk fast plant fastplant pivot.",
+    "date": "16.07.2021",
+    "avatar":"avatar-3.png"
+  }
+]

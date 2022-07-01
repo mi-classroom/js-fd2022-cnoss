@@ -325,3 +325,38 @@
 .navbar li a{
   display: block;
 }
+
+/* Comments
+############################################################################ */
+
+.comment{
+  display: flex;
+  gap: var(--s);
+  align-items: center;
+  margin-bottom: var(--l);
+  flex-direction: column;
+}
+
+@media screen and (min-width: 60rem) {
+  .comment{
+    flex-direction: row;
+  }
+}
+
+.comment_avatar{
+  width: 160px;
+  
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.comment__name{
+  padding-top: 0;
+  font-size: var(--m);
+  font-weight: var(--fw-bold);
+  margin-top: 0;
+  margin-bottom: var(--s);
+}
