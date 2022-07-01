@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="../styles/base.css" />
     <link rel="stylesheet" href="../styles/components.css" />
 
-    <script src="../scripts/main.js"></script>
+    <script src="../scripts/main.js" async></script>
   </head>
   <body>
     <header
@@ -44,7 +44,7 @@
         <div class="main-navigation__trigger" tabindex="0">
           <i class="material-icons">menu</i>
 
-          <ul class="navbar">
+          <ul class="navbar" data-js-navbar>
             <li>
               <a href="/chapters/theory.html#design-principles"
                 >Design Principles</a
@@ -638,6 +638,6 @@
           </form>
         </footer>
       </main>
-    </div>
+    </div> 
   </body>
 </html>

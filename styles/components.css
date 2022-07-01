@@ -315,3 +315,13 @@
     margin-top: calc(var(--m) * -0.4);
   }
 }
+
+/* Navbar Item
+############################################################################ */
+.navbar li[data-state=active]{
+  background-color: var(--color-accent);
+}
+
+.navbar li a{
+  display: block;
+}
