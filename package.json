@@ -1,7 +1,7 @@
 {
   "scripts":{
-    "js:lint": "eslint scripts/**/*.js",
-    "js:lint:fix": "eslint scripts/**/*.js --fix"
+    "js:lint": "eslint assets/scripts/**/*.js",
+    "js:lint:fix": "eslint assets/scripts/**/*.js --fix"
   },
   "devDependencies": {
     "eslint": "^8.18.0",
