@@ -28,7 +28,7 @@ class NavInteraction {
 
 class Comments {
   constructor(pattern) {
-    this.templateUrl = '/templates/comment.html';
+    this.templateUrl = '/assets/mustache-templates/comment.html';
     this.target = document.querySelector(pattern);
     this.commentUrl = this.target.dataset.jsComments;
   }
@@ -74,8 +74,7 @@ const vueComments = () => {
   createApp({
     data() {
       return {
-        jsonUrl: '/json/comments.json',
-        message: 'Hello Vue!',
+        jsonUrl: '/assets/json/comments.json',
         comments: [],
       };
     },
