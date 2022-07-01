@@ -22,7 +22,36 @@ class NavInteraction {
     target.dataset.state = 'active';
     this.lastActiveNavElement = target;
   }
+}
 
+class Comments {
+  constructor(pattern) {
+    this.target = document.querySelector(pattern);
+    this.commentUrl = this.target.dataset.jsComments;
+  }
+
+  fetch() {
+    fetch(this.commentUrl)
+      .then(response => response.json())
+      .then(data => this.render(data));
+  }
+
+  render(data) {
+    const commentList = data.map(comment => {
+      return `
+        <figure class="comment">
+          <img class="comment_avatar" src="/images/avatars/${comment.avatar}" alt="${comment.firstname} ${comment.lastname}">
+          <figcaption>
+            <h3 class="comment__name">${comment.firstname} ${comment.lastname}</h3>
+            <p class="comment__text">${comment.comment}</p>
+            <date class="comment__date">${comment.date}</date>
+          </figcaption>
+        </figure>
+      `;
+    });
+
+    this.target.innerHTML = commentList.join("");
+  }
 }
 
 /* Functions 
@@ -43,60 +72,6 @@ const scrollSpy = (navInteraction) => {
   elementsWithId.forEach( ele => intersectionObserver.observe(ele));
 }
 
-class Comments{
-  constructor(pattern) {
-    this.target = document.querySelector(pattern);
-    this.commentUrl = this.target.dataset.jsComments;
-  }
-
-  fetch(){
-    fetch(this.commentUrl)
-    .then(response => response.json())
-    .then(data => this.render(data));
-  }
-
-  render(data) {
-    const commentList = data.map(comment => {
-      return `
-        <figure class="comment">
-          <img class="comment_avatar" src="/images/avatars/${comment.avatar}" alt="${comment.firstname} ${comment.lastname}">
-          <figcaption>
-            <h3 class="comment__name">${comment.firstname} ${comment.lastname}</h3>
-            <p class="comment__text">${comment.comment}</p>
-            <date class="comment__date">${comment.date}</date>
-          </figcaption>
-        </figure>
-      `;
-    });
-
-    this.target.innerHTML = commentList.join("");
-  }
-
-}
-
-const fetchComments = () => {
-  fetch('/json/comments.json')
-  .then(response => response.json())
-  .then(data => renderComments(data));
-}
-
-const renderComments = (comments) => {
-  const target = document.querySelector('[data-js-comments]')
-  const commentList = comments.map(comment => {
-    return `
-      <figure class="comment">
-        <img class="comment_avatar" src="/images/avatars/${comment.avatar}" alt="${comment.firstname} ${comment.lastname}">
-        <figcaption>
-          <h3 class="comment__name">${comment.firstname} ${comment.lastname}</h3>
-          <p class="comment__text">${comment.comment}</p>
-          <date class="comment__date">${comment.date}</date>
-        </figcaption>
-      </figure>
-    `;
-  });
-
-  target.innerHTML = commentList.join("");
-}
 /* Main 
 ############################################################################ */
 
