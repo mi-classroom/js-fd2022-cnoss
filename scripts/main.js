@@ -26,31 +26,21 @@ class NavInteraction {
 
 class Comments {
   constructor(pattern) {
+    this.templateUrl = '/templates/comment.html';
     this.target = document.querySelector(pattern);
     this.commentUrl = this.target.dataset.jsComments;
   }
 
-  fetch() {
-    fetch(this.commentUrl)
-      .then(response => response.json())
-      .then(data => this.render(data));
+  render() {
+    fetch(this.templateUrl)
+      .then((response) => response.text())
+      .then((template) => this.fetchComments(template));
   }
 
-  render(data) {
-    const commentList = data.map(comment => {
-      return `
-        <figure class="comment">
-          <img class="comment_avatar" src="/images/avatars/${comment.avatar}" alt="${comment.firstname} ${comment.lastname}">
-          <figcaption>
-            <h3 class="comment__name">${comment.firstname} ${comment.lastname}</h3>
-            <p class="comment__text">${comment.comment}</p>
-            <date class="comment__date">${comment.date}</date>
-          </figcaption>
-        </figure>
-      `;
-    });
-
-    this.target.innerHTML = commentList.join("");
+  fetchComments(template) {
+    fetch(this.commentUrl)
+      .then(response => response.json())
+      .then(commentsData => this.target.innerHTML =  Mustache.render(template, commentsData));
   }
 }
 
@@ -83,5 +73,5 @@ document.addEventListener('DOMContentLoaded', () => {
   scrollSpy(navInteraction);
 
   const comments = new Comments('[data-js-comments]');
-  comments.fetch();
+  comments.render();
 });
