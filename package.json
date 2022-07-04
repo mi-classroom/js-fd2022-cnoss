@@ -1,14 +1,21 @@
 {
   "scripts": {
-    "js:lint": "eslint assets/scripts/**/*.js",
-    "js:lint:fix": "eslint assets/scripts/**/*.js --fix",
-    "css:lint": "stylelint assets/styles/**/*.scss",
-    "css:lint:fix": "stylelint assets/styles/**/*.scss --fix",
-    "dev:css": "sass assets/styles/scss/main.scss:assets/styles/main.css",
-    "watch:sass": "sass --watch asstes/styles/scss styles/scss/main.scss:assets/styles/main.css",
-    "watch": "npm-run-all --parallel dev:css watch:*"
+    "js:lint": "eslint src/assets/scripts/**/*.js",
+    "js:lint:fix": "eslint src/assets/scripts/**/*.js --fix",
+    "css:lint": "stylelint src/assets/styles/**/*.scss",
+    "css:lint:fix": "stylelint src/assets/styles/**/*.scss --fix",
+    "dev:css": "sass src/assets/styles/scss/main.scss:src/compiled-assets/main.css",
+    "watch:sass": "sass --watch src/assets/styles/scss src/assets/styles/scss/main.scss:src/compiled-assets/main.css",
+    "watch": "npm-run-all --parallel dev:css watch:*",
+    "dev": "npm-run-all --parallel watch serve:11ty",
+    "build": "npm-run-all del:docs del:assets dev:css build:site",
+    "build:site": "ELEVENTY_ENV=production npx eleventy",
+    "serve:11ty": "ELEVENTY_ENV=development npx eleventy --serve",
+    "del:docs": "rimraf ./docs",
+    "del:assets": "rimraf ./src/compiled-assets"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
     "eslint": "^8.18.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",

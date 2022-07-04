@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Online Sports Communities // Appendix</title>
+
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      />
+
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+      />
+      <link rel="stylesheet" href="/assets/main.css" />
+
+      <script src="/assets/scripts/main.js" async></script>
+      <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js" async></script>
+      <script src="https://unpkg.com/vue@3"></script>
+
+    </head>
+    <body>
+    
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur laborum, voluptatibus ullam iusto veniam alias ea quia illo fugiat dicta id vitae ut quam, repellendus aspernatur a officia? Quo, modi.
+    
+<footer id="comments">
+  <h2 class="headline">Ihr Kommentar zum Thema</h2>
+    <form>
+            <fieldset>
+              <legend>Persönliche Daten</legend>
+
+              <div class="field-with-label">
+                <label for="vorname">Vorname</label>
+                <input
+                  type="text"
+                  id="vorname"
+                  name="vorname"
+                  placeholder="Erika"
+                />
+              </div>
+
+              <div class="field-with-label">
+                <label for="nachname">Nachname</label>
+                <input
+                  type="text"
+                  id="nachname"
+                  name="nachname"
+                  placeholder="Mustermann"
+                />
+              </div>
+
+              <div class="field-with-label">
+                <label for="email">E-Mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="e.mustermann@web.de"
+                />
+              </div>
+
+              <div class="field-with-label">
+                <label for="avatar">Profilbild</label>
+                <input type="file" id="avatar" name="avatar" />
+              </div>
+            </fieldset>
+
+            <div class="field-with-label">
+              <label for="kommentar">Ihr Kommentar</label>
+              <textarea id="kommentar" name="kommentar"></textarea>
+            </div>
+
+            <div class="field">
+              <p>
+                Soll der Autorenname in einer späteren Anzeige anonymisiert
+                werden?
+              </p>
+              <input
+                type="radio"
+                id="ja"
+                name="anonymisieren"
+                value="ja"
+                checked
+              />
+              <label for="ja">ja</label>
+
+              <input type="radio" id="nein" name="anonymisieren" value="nein" />
+              <label for="nein">nein</label>
+            </div>
+
+            <div class="field">
+              <p>Haben Sie die Datenschutzerklärung brav gelesen?</p>
+              <input type="checkbox" name="datenschutz" id="datenschutz" />
+              <label for="datenschutz"
+                >ja, ich habe die Datenschutzerklärung brav gelesen</label
+              >
+            </div>
+
+            <div class="footer-field">
+              <input type="reset" value="Daten zurücksetzen" />
+              <input type="submit" value="Kommentar absenden" />
+            </div>
+          </form>
+  <h3>Comments via Mustache</h3>
+  <ul class="comment-list" data-js-comments="/assets/json/comments.json"></ul>
+  <h3>Comments via Vue.js</h3>
+  <ul id="vue-comments" class="comment-list" data-js-vue-comments="/assets/json/comments.json">
+    <li v-for="comment in comments.items">
+      <figure class="comment">
+        <img :src="imageUrl(comment.avatar)" class="comment__avatar">
+        <figcaption>
+          <h3 class="comment__name">{{comment.firstname}} {{comment.lastname}}</h3>
+          <p class="comment__text">{{comment.comment}}</p>
+          <date class="comment__date">{{comment.date}}</date>
+        </figcaption>
+      </figure>
+    </li>
+  </ul>
+</footer>
+
+    </body>
+  </html>

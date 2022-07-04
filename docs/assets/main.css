@@ -34,8 +34,8 @@ html:focus-within {
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
   line-height: 1.5;
+  text-rendering: optimizespeed;
 }
 
 /* A elements that don't have a class get default styles */
@@ -46,8 +46,8 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -60,25 +60,25 @@ select {
 
 :root {
   --bfs: 0.5rem;
-  --xxs: calc(var(--bfs) * 1.00);
+  --xxs: calc(var(--bfs) * 1);
   --xs: calc(var(--bfs) * 1.25);
-  --s: calc(var(--bfs) * 1.60);
-  --m: calc(var(--bfs) * 2.00);
-  --l: calc(var(--bfs) * 2.50);
+  --s: calc(var(--bfs) * 1.6);
+  --m: calc(var(--bfs) * 2);
+  --l: calc(var(--bfs) * 2.5);
   --xl: calc(var(--bfs) * 3.15);
-  --xxl: calc(var(--bfs) * 4.00);
-  --xxxl: calc(var(--bfs) * 5.00);
-  --xxxxl: calc(var(--bfs) * 6.30);
+  --xxl: calc(var(--bfs) * 4);
+  --xxxl: calc(var(--bfs) * 5);
+  --xxxxl: calc(var(--bfs) * 6.3);
   --light: #ccc;
   --lighter: #eee;
   --lightest: #fff;
   --dark: #888;
   --darker: #111;
   --darkest: #000;
-  --darken: rgba(0,0,0,0.2);
+  --darken: rgb(0 0 0 / 20%);
   --color-text: var(--darker);
   --color-headline: var(--dark);
-  --color-accent: rgb(254,196,87);
+  --color-accent: rgb(254 196 87);
   --ff-normal: "IBM Plex Sans", sans-serif;
   --ff-serif: "IBM Plex Serif", serif;
   --fw-normal: 400;
@@ -88,7 +88,7 @@ select {
   --lh-tight: 110%;
   --lh-loose: 150%;
   --tr-fast: 0.3s;
-  --shadow-l: 0 0 10px rgba(0,0,0,0.5);
+  --shadow-l: 0 0 10px rgb(0 0 0 / 50%);
   --border-width-s: 1px;
   --border-width-m: 3px;
 }
@@ -103,44 +103,49 @@ html {
 }
 
 body {
-  font-family: var(--ff-normal);
-  font-weight: var(--fw-normal);
-  font-size: var(--m);
-  line-height: var(--lh-normal);
-  color: var(--color-text);
-  hyphens: auto;
-  background-color: var(--lightest);
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  background-color: var(--lightest);
+  color: var(--color-text);
+  font-family: var(--ff-normal);
+  font-size: var(--m);
+  font-weight: var(--fw-normal);
+  hyphens: auto;
+  line-height: var(--lh-normal);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color-headline);
+  font-weight: bold;
   hyphens: none;
 }
 
 h1 {
-  font-size: var(--xxxl);
   padding-top: var(--xxxl);
   padding-bottom: var(--xxxl);
-  line-height: var(--lh-tight);
   color: var(--darkest);
+  font-size: var(--xxxl);
+  line-height: var(--lh-tight);
 }
 
 h2 {
   padding-top: var(--xxl);
+  margin-bottom: var(--xxl);
   font-size: var(--xxl);
   font-weight: var(--fw-medium);
-  margin-bottom: var(--xxl);
 }
 
 h3 {
   padding-top: var(--xl);
+  margin-bottom: var(--xl);
   font-size: var(--xl);
   font-weight: normal;
-  margin-bottom: var(--xl);
 }
 
 img {
@@ -148,12 +153,15 @@ img {
 }
 
 dt {
+  margin-bottom: var(--xxs);
   color: var(--color-headline);
   font-weight: var(--fw-bold);
-  margin-bottom: var(--xxs);
 }
 
-p, blockquote, dd, table {
+p,
+blockquote,
+dd,
+table {
   margin-bottom: var(--m);
 }
 
@@ -162,9 +170,9 @@ figure {
 }
 
 figcaption {
-  border-bottom: solid var(--border-width-s) var(--darken);
   padding-top: var(--m);
   padding-bottom: var(--l);
+  border-bottom: solid var(--border-width-s) var(--darken);
   color: var(--dark);
 }
 
@@ -182,69 +190,72 @@ tbody tr {
   border-top: solid 1px var(--light);
 }
 
-td, th {
+td,
+th {
   padding: var(--xs);
   text-align: left;
 }
 
-thead td, thead th {
-  font-weight: var(--fw-bold);
+thead td,
+thead th {
   color: var(--color-headline);
+  font-weight: var(--fw-bold);
 }
 
 blockquote {
-  border-top: solid 1px var(--light);
-  border-bottom: solid 1px var(--light);
-  font-family: var(--ff-serif);
   padding-top: clamp(var(--xl), 5vw + var(--bfs), var(--xxxl));
   padding-bottom: clamp(var(--xl), 5vw + var(--bfs), var(--xxxl));
+  border-top: solid 1px var(--light);
+  border-bottom: solid 1px var(--light);
   margin-top: clamp(var(--xl), 5vw + var(--bfs), 200px);
   margin-bottom: clamp(var(--xl), 5vw + var(--bfs), 200px);
+  font-family: var(--ff-serif);
 }
 
 blockquote p {
-  font-style: italic;
   font-size: clamp(var(--m), 2vw + var(--bfs), var(--xl));
+  font-style: italic;
   line-height: var(--lh-normal);
 }
 
-blockquote p:before,
-blockquote p:after {
-  content: "«";
+blockquote p::before,
+blockquote p::after {
   display: inline-block;
   margin-right: var(--xxs);
   color: var(--color-accent);
+  content: "«";
 }
 
-blockquote p:after {
-  content: "»";
+blockquote p::after {
   margin-left: var(--xxs);
+  content: "»";
 }
 
-blockquote footer:before {
-  content: "–";
+blockquote footer::before {
   display: inline-block;
   margin-right: var(--xxs);
+  content: "–";
 }
 
+/* stylelint-disable selector-class-pattern */
 /* Intro
 ############################################################################ */
 .article-intro {
-  margin-top: var(--xxl);
   padding-top: var(--xxl);
   padding-bottom: var(--xxxl);
-  font-size: var(--l);
+  margin-top: var(--xxl);
   color: var(--dark);
+  font-size: var(--l);
   line-height: var(--lh-normal);
 }
 
-.article-intro .headline:after {
-  content: " ";
+.article-intro .headline::after {
   display: block;
   width: 50%;
-  margin-top: var(--m);
   border-top: var(--dark) var(--border-width-m) solid;
+  margin-top: var(--m);
   color: var(--dark);
+  content: " ";
 }
 
 /* Navigation
@@ -258,8 +269,8 @@ blockquote footer:before {
 
 .main-navigation li {
   padding: var(--s);
-  transition: background-color var(--tr-fast);
   font-weight: var(--fw-bold);
+  transition: background-color var(--tr-fast);
 }
 
 .main-navigation ul.navbar > li + li {
@@ -280,8 +291,8 @@ blockquote footer:before {
 }
 
 .main-navigation ul.navbar > li > ul {
-  padding-top: var(--xs);
   display: none;
+  padding-top: var(--xs);
   margin-left: calc(var(--m) * -1);
 }
 
@@ -298,8 +309,8 @@ blockquote footer:before {
 }
 
 .main-navigation ul.navbar > li > ul > li {
-  font-weight: var(--fw-normal);
   padding-left: var(--m);
+  font-weight: var(--fw-normal);
 }
 
 .main-navigation ul.navbar > li > ul > li:hover {
@@ -319,9 +330,9 @@ blockquote footer:before {
 }
 
 .main-navigation__trigger i {
+  display: block;
   padding: 0;
   margin: 0;
-  display: block;
   margin: var(--xs);
 }
 
@@ -341,8 +352,8 @@ blockquote footer:before {
     display: none;
   }
   .main-navigation {
-    background-color: transparent;
     padding-right: var(--xl);
+    background-color: transparent;
   }
   .main-navigation ul.navbar > li:focus-within {
     background-color: transparent;
@@ -358,9 +369,9 @@ blockquote footer:before {
 ############################################################################ */
 #comments {
   padding: var(--m);
+  margin-top: var(--xxxxl);
   background-color: var(--lighter);
   font-size: var(--s);
-  margin-top: var(--xxxxl);
 }
 
 #comments form label {
@@ -385,8 +396,8 @@ blockquote footer:before {
 }
 
 #comments .headline {
-  font-size: var(--m);
   padding-top: 0;
+  font-size: var(--m);
 }
 
 #comments fieldset {
@@ -394,9 +405,9 @@ blockquote footer:before {
 }
 
 #comments legend {
-  color: var(--dark);
   margin-top: var(--m);
   margin-bottom: var(--m);
+  color: var(--dark);
 }
 
 /* Field
@@ -423,16 +434,16 @@ blockquote footer:before {
 /* Hero
 ############################################################################ */
 .hero {
-  width: 100%;
-  padding-top: var(--l);
-  padding-bottom: var(--xl);
   display: flex;
+  width: 100%;
+  min-height: 50vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-size: cover;
+  padding-top: var(--l);
+  padding-bottom: var(--xl);
   background-position: center;
-  min-height: 50vh;
+  background-size: cover;
 }
 
 .hero > * {
@@ -448,17 +459,17 @@ blockquote footer:before {
 }
 
 .hero .title {
-  font-size: var(--xxl);
-  color: var(--color-accent);
   padding-top: 0;
   padding-bottom: 0;
+  color: var(--color-accent);
+  font-size: var(--xxl);
 }
 
 .hero .subtitle {
-  font-size: var(--xl);
-  color: var(--lighter);
   padding-top: 0;
   padding-bottom: 0;
+  color: var(--lighter);
+  font-size: var(--xl);
 }
 
 .hero .author {
@@ -488,15 +499,15 @@ blockquote footer:before {
 ############################################################################ */
 .content-wrap {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
 @media only screen and (min-width: 1400px) {
   .content-wrap {
     display: grid;
-    grid-template-columns: calc(var(--m) * 20) 1fr;
     align-items: start;
+    grid-template-columns: calc(var(--m) * 20) 1fr;
   }
 }
 .content-wrap > nav.main-navigation {
@@ -513,15 +524,15 @@ blockquote footer:before {
 @media only screen and (min-width: 1400px) {
   dl.grid-view {
     display: grid;
-    grid-template-columns: calc(var(--m) * 15) 1fr;
-    gap: var(--m);
     margin-bottom: var(--xxl);
+    gap: var(--m);
+    grid-template-columns: calc(var(--m) * 15) 1fr;
   }
   dl.grid-view dt {
-    border-top: solid var(--color-accent) var(--border-width-s);
     padding-top: var(--xs);
-    font-weight: var(--fw-medium);
+    border-top: solid var(--color-accent) var(--border-width-s);
     color: var(--darkest);
+    font-weight: var(--fw-medium);
   }
   dl.grid-view dd {
     margin-top: calc(var(--m) * -0.4);
@@ -541,10 +552,10 @@ blockquote footer:before {
 ############################################################################ */
 .comment {
   display: flex;
-  gap: var(--s);
+  flex-direction: column;
   align-items: center;
   margin-bottom: var(--l);
-  flex-direction: column;
+  gap: var(--s);
 }
 
 @media screen and (min-width: 60rem) {
@@ -553,20 +564,20 @@ blockquote footer:before {
   }
 }
 .comment__avatar {
+  display: block;
+  overflow: hidden;
   width: 160px;
   aspect-ratio: 1/1;
-  object-fit: cover;
-  display: block;
   border-radius: 50%;
-  overflow: hidden;
+  object-fit: cover;
 }
 
 .comment__name {
   padding-top: 0;
-  font-size: var(--m);
-  font-weight: var(--fw-bold);
   margin-top: 0;
   margin-bottom: var(--s);
+  font-size: var(--m);
+  font-weight: var(--fw-bold);
 }
 
 /*# sourceMappingURL=main.css.map */

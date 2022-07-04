@@ -28,7 +28,7 @@ class NavInteraction {
 
 class Comments {
   constructor(pattern) {
-    this.templateUrl = '/assets/mustache-templates/comment.html';
+    this.templateUrl = '/assets/mustache-templates/comment.tpl';
     this.target = document.querySelector(pattern);
     this.commentUrl = this.target.dataset.jsComments;
   }
@@ -70,7 +70,7 @@ const scrollSpy = (navInteraction) => {
 const vueComments = () => {
   // eslint-disable-next-line no-undef
   const { createApp } = Vue;
-
+  alert('ass');
   createApp({
     data() {
       return {
@@ -83,6 +83,7 @@ const vueComments = () => {
         fetch(jsonUrl)
           .then((response) => response.json())
           .then((data) => {
+            console.log(data);
             this.comments = data;
           });
       },
