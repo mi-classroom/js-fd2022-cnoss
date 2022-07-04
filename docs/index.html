@@ -20,9 +20,9 @@
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"
       />
-      <link rel="stylesheet" href="/assets/main.css" />
+      <link rel="stylesheet" href="/js-fd2022-cnoss/assets/main.css" />
 
-      <script src="/assets/scripts/main.js" async></script>
+      <script src="/js-fd2022-cnoss/assets/scripts/main.js" async></script>
       <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js" async></script>
       <script src="https://unpkg.com/vue@3"></script>
 
@@ -32,21 +32,21 @@
     <h1>Übersicht</h1>
     <ul>
       
-      <li><a href="/chapters/00-introduction/">Introduction</a></li>
+      <li><a href="/js-fd2022-cnoss/chapters/00-introduction/">Introduction</a></li>
     
-      <li><a href="/chapters/20-research/">Research</a></li>
+      <li><a href="/js-fd2022-cnoss/chapters/20-research/">Research</a></li>
     
-      <li><a href="/chapters/30-conception/">Conception</a></li>
+      <li><a href="/js-fd2022-cnoss/chapters/30-conception/">Conception</a></li>
     
-      <li><a href="/chapters/40-prototyping/">Prototyping</a></li>
+      <li><a href="/js-fd2022-cnoss/chapters/40-prototyping/">Prototyping</a></li>
     
-      <li><a href="/chapters/50-evaluation/">Evaluation</a></li>
+      <li><a href="/js-fd2022-cnoss/chapters/50-evaluation/">Evaluation</a></li>
     
-      <li><a href="/chapters/60-conclusion/">Conclusion</a></li>
+      <li><a href="/js-fd2022-cnoss/chapters/60-conclusion/">Conclusion</a></li>
     
-      <li><a href="/chapters/70-appendix/">Appendix</a></li>
+      <li><a href="/js-fd2022-cnoss/chapters/70-appendix/">Appendix</a></li>
     
-      <li><a href="/chapters/theory/">Theory</a></li>
+      <li><a href="/js-fd2022-cnoss/chapters/theory/">Theory</a></li>
     
     </ul>
   
@@ -130,9 +130,9 @@
             </div>
           </form>
   <h3>Comments via Mustache</h3>
-  <ul class="comment-list" data-js-comments="/assets/json/comments.json"></ul>
+  <ul class="comment-list" data-js-comments="../assets/json/comments.json"></ul>
   <h3>Comments via Vue.js</h3>
-  <ul id="vue-comments" class="comment-list" data-js-vue-comments="/assets/json/comments.json">
+  <ul id="vue-comments" class="comment-list" data-js-vue-comments="../assets/json/comments.json'">
     <li v-for="comment in comments.items">
       <figure class="comment">
         <img :src="imageUrl(comment.avatar)" class="comment__avatar">

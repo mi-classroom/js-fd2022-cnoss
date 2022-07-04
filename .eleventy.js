@@ -49,7 +49,7 @@ module.exports = function (eleventyConfig) {
       layouts: '_templates',
       output: 'docs',
     },
-    pathPrefix: "",
+    pathPrefix: "js-fd2022-cnoss",
     markdownTemplateEngine: '11ty.js',
     htmlTemplateEngine: '11ty.js',
     templateFormats: [

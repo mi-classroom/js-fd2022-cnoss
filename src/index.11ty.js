@@ -5,7 +5,7 @@ exports.data = {
 
 exports.render = (data) => {
   const items = data.collections.chapters.map((chapter) => `
-      <li><a href="${chapter.url}">${chapter.data.title}</a></li>
+      <li><a href="${this.url(chapter.url)}">${chapter.data.title}</a></li>
     `);
 
   return `

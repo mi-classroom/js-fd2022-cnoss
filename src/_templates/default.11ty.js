@@ -25,9 +25,9 @@ exports.render = (pageData) => {
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"
       />
-      <link rel="stylesheet" href="/assets/main.css" />
+      <link rel="stylesheet" href="${this.url('/assets/main.css')}" />
 
-      <script src="/assets/scripts/main.js" async></script>
+      <script src="${this.url('/assets/scripts/main.js')}" async></script>
       <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js" async></script>
       <script src="https://unpkg.com/vue@3"></script>
 

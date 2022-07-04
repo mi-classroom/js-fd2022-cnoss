@@ -20,9 +20,9 @@
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"
       />
-      <link rel="stylesheet" href="/assets/main.css" />
+      <link rel="stylesheet" href="/js-fd2022-cnoss/assets/main.css" />
 
-      <script src="/assets/scripts/main.js" async></script>
+      <script src="/js-fd2022-cnoss/assets/scripts/main.js" async></script>
       <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js" async></script>
       <script src="https://unpkg.com/vue@3"></script>
 
@@ -109,9 +109,9 @@
             </div>
           </form>
   <h3>Comments via Mustache</h3>
-  <ul class="comment-list" data-js-comments="/assets/json/comments.json"></ul>
+  <ul class="comment-list" data-js-comments="../assets/json/comments.json"></ul>
   <h3>Comments via Vue.js</h3>
-  <ul id="vue-comments" class="comment-list" data-js-vue-comments="/assets/json/comments.json">
+  <ul id="vue-comments" class="comment-list" data-js-vue-comments="../assets/json/comments.json'">
     <li v-for="comment in comments.items">
       <figure class="comment">
         <img :src="imageUrl(comment.avatar)" class="comment__avatar">

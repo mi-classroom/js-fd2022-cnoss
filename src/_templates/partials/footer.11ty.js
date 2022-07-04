@@ -78,9 +78,9 @@ exports.html = `
             </div>
           </form>
   <h3>Comments via Mustache</h3>
-  <ul class="comment-list" data-js-comments="/assets/json/comments.json"></ul>
+  <ul class="comment-list" data-js-comments="../assets/json/comments.json"></ul>
   <h3>Comments via Vue.js</h3>
-  <ul id="vue-comments" class="comment-list" data-js-vue-comments="/assets/json/comments.json">
+  <ul id="vue-comments" class="comment-list" data-js-vue-comments="../assets/json/comments.json'">
     <li v-for="comment in comments.items">
       <figure class="comment">
         <img :src="imageUrl(comment.avatar)" class="comment__avatar">
